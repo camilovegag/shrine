@@ -4,11 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NativeBaseProvider } from "native-base";
 import { NavigationContainer } from "@react-navigation/native";
 import { StatusBar } from "expo-status-bar";
-import {
-  useFonts,
-  Nunito_400Regular,
-  Nunito_600SemiBold
-} from "@expo-google-fonts/nunito";
+import { useFonts, Nunito_400Regular, Nunito_600SemiBold } from "@expo-google-fonts/nunito";
 import Home from "./screens/Home";
 import SearchNavigator from "./routes/SearchNavigator";
 import User from "./screens/User";
@@ -23,7 +19,7 @@ const { Screen, Navigator } = createBottomTabNavigator();
 const App = () => {
   let [fontsLoaded] = useFonts({
     "Nunito-regular": Nunito_400Regular,
-    "Nunito-semi-bold": Nunito_600SemiBold
+    "Nunito-semi-bold": Nunito_600SemiBold,
   });
   return !fontsLoaded ? (
     <AppLoading />
