@@ -1,6 +1,28 @@
-import {FILTER_BY_NAME } from "./actions";
-const data = require("../data.json");
+import { UPDATE_TEXT, FILTER_BY_NAME } from "./actions";
+//const data = require("../data.json");
+let data;
 
+async function JSONResponse () {
+
+  let promise = new Promise((resolve, reject) => {
+    var XMLHttpRequest = require('xhr2');
+    let req = new XMLHttpRequest();
+    let currentData = "";
+    req.open("GET", "https://api.jsonbin.io/v3/b/619fe92201558c731cc8d669/latest", true);
+    req.setRequestHeader("X-Master-Key", "$2b$10$uhR.5vVjjd1Oxt5/VemqBemLTV2utVcdwvRBW.9NuByKPccbG67Oa");
+    req.send();
+    req.onreadystatechange = () => {
+      if (req.readyState == XMLHttpRequest.DONE) {
+        currentData = JSON.parse(req.responseText)
+        resolve(currentData.record)
+        reject("");
+      }
+    }
+  })
+  data = await promise;
+}
+
+JSONResponse();
 
 const initialState = {
   text: []
