@@ -1,5 +1,6 @@
-import { UPDATE_TEXT, FILTER_BY_NAME } from "./actions";
+import {FILTER_BY_NAME } from "./actions";
 const data = require("../data.json");
+
 
 const initialState = {
   text: []

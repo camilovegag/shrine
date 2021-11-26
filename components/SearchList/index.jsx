@@ -11,13 +11,13 @@ import {
   Text
 } from "native-base";
 
-export default function SearchList(props)  { 
+export default function SearchList({list,navigate})  { 
 return(
     <FlatList
     nestedScrollEnabled
     value=""
     keyExtractor={(array) => array.profile.email}
-    data={props.list}
+    data={list}
     renderItem={({ item }) => {
     return (
         <Button
@@ -26,7 +26,7 @@ return(
         alignItems="flex-start"
         justifyContent="flex-start"
         onPress={() =>
-            props.navigate("UserResult",{
+            navigate("UserResult",{
             user : item,
             })
         }

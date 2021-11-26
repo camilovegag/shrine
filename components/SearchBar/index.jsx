@@ -1,14 +1,8 @@
-import React,{useEffect} from "react";
+import React,{useEffect,useRef} from "react";
 import {
-  Avatar,
-  Box,
-  Button,
   Center,
-  FlatList,
-  Flex,
   Icon,
   Input,
-  Text
 } from "native-base";
 import { useSelector, useDispatch } from "react-redux";
 import { filterByName } from "../../redux/actions";
@@ -24,19 +18,16 @@ const AppWrapper = (navigation) => {
   const filteredList = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
 
-  const inputValue = React.useRef(null);
+  const inputValue = useRef(null);
   const isFocused = useIsFocused();
 
   useEffect(() => {
     filteredList['text']=[];
-    inputValue.current.clear();
 
     if(isFocused){ 
-      getInitialData();
-  }  }, [isFocused]) 
-
-  const getInitialData = async () => {} 
-
+      inputValue.current.clear(); 
+     }  
+    }, [isFocused]) 
 
   return (
     <Center py={8} px={4}>
