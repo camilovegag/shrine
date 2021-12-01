@@ -5,7 +5,7 @@ import UserProject from "../../components/UserProject";
 import UserSkills from "../../components/UserSkills";
 import { Flex, ScrollView, Text } from "native-base";
 
-const uSERResult = ({ route }) => {
+const UserResult = ({ route }) => {
   const { profile, skills, projects } = route.params.user;
   const { first_name } = profile;
   const colors = ["#C4D600", "#00AEEF", "#333333"];
@@ -16,21 +16,11 @@ const uSERResult = ({ route }) => {
         <UserCard profile={profile} />
         <Flex bg="#fff" flex={1} borderTopRadius="16">
           <UserSkills skills={skills} first_name={first_name} />
-          <Text
-            color="#333"
-            fontFamily="Nunito-semi-bold"
-            fontSize="18px"
-            mt={8}
-            mx={4}
-          >
+          <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={8} mx={4}>
             Projects
           </Text>
           {projects.map((project, idx) => (
-            <UserProject
-              key={idx}
-              project={project}
-              color={colors[idx % colors.length]}
-            />
+            <UserProject key={idx} project={project} color={colors[idx % colors.length]} />
           ))}
         </Flex>
       </ScrollView>
@@ -38,4 +28,4 @@ const uSERResult = ({ route }) => {
   );
 };
 
-export default uSERResult;
+export default UserResult;
