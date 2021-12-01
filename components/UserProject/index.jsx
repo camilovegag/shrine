@@ -14,7 +14,7 @@ const UserProject = ({ project, color }) => {
     objectEndDate.getFullYear().toString();
 
   return (
-    <Box shadow={3} h="194px" mx={4} my={6}>
+    <Box shadow={3} h="194px" mx={4} my={4}>
       <Flex px={4} pt={6} pb={6} bg={color} justifyContent="center" h="76px">
         <Text bold color="#FFFFFF" fontSize="18px">
           {name}
@@ -49,7 +49,7 @@ UserProject.propTypes = {
   manager: PropTypes.string,
   techLead: PropTypes.string,
   endDate: PropTypes.number,
-  color: PropTypes.string
+  color: PropTypes.string,
 };
 
 export default UserProject;
