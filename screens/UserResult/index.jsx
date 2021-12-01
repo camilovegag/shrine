@@ -2,7 +2,7 @@ import React from "react";
 import Paper from "../../components/Paper";
 import UserCard from "../../components/UserCard";
 import UserProject from "../../components/UserProject";
-import UserSkills from "../../components/UserSkills";
+import Skills from "../../components/Skills";
 import { Flex, ScrollView, Text } from "native-base";
 
 const UserResult = ({ route }) => {
@@ -14,9 +14,9 @@ const UserResult = ({ route }) => {
     <Paper>
       <ScrollView>
         <UserCard profile={profile} />
-        <Flex bg="#fff" flex={1} borderTopRadius="16">
-          <UserSkills skills={skills} first_name={first_name} />
-          <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={8} mx={4}>
+        <Flex bg="#fff" flex={1}>
+          <Skills skills={skills} first_name={first_name} />
+          <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={6} mx={4}>
             Projects
           </Text>
           {projects.map((project, idx) => (
