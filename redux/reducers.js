@@ -1,4 +1,6 @@
 import { UPDATE_TEXT, FILTER_BY_NAME } from "./actions";
+import Config from "react-native-config";
+console.log("ENV:", Config.X_MASTER_KEY);
 let data;
 
 async function JSONResponse() {
