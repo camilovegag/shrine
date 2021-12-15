@@ -80,12 +80,18 @@ const User = () => {
         <UserCard profile={profile} />
         <Flex bg="#fff" flex={1}>
           <Skills skills={skills} first_name={profile.first_name} />
-          <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={6} mx={4}>
-            Projects
-          </Text>
-          {projects.map((project, idx) => (
-            <UserProject key={idx} project={project} color={colors[idx % colors.length]} />
-          ))}
+          {projects.length === 0 ? (
+            <Text>This user doesn't have any project assigned.</Text>
+          ) : (
+            <>
+              <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={6} mx={4}>
+                Projects
+              </Text>
+              {projects.map((project, idx) => (
+                <UserProject key={idx} project={project} color={colors[idx % colors.length]} />
+              ))}
+            </>
+          )}
         </Flex>
       </ScrollView>
     </Paper>

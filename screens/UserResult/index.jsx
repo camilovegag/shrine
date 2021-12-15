@@ -16,12 +16,27 @@ const UserResult = ({ route }) => {
         <UserCard profile={profile} />
         <Flex bg="#fff" flex={1}>
           <Skills skills={skills} first_name={first_name} />
-          <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={6} mx={4}>
-            Projects
-          </Text>
-          {projects.map((project, idx) => (
-            <UserProject key={idx} project={project} color={colors[idx % colors.length]} />
-          ))}
+          {projects.length === 0 ? (
+            <Text
+              color="#333"
+              fontFamily="Nunito-semi-bold"
+              fontSize="18px"
+              mt={10}
+              mb={160}
+              mx={4}
+            >
+              This user doesn't have any projects assigned yet.
+            </Text>
+          ) : (
+            <>
+              <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" mt={6} mx={4}>
+                Projects
+              </Text>
+              {projects.map((project, idx) => (
+                <UserProject key={idx} project={project} color={colors[idx % colors.length]} />
+              ))}
+            </>
+          )}
         </Flex>
       </ScrollView>
     </Paper>
