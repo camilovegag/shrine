@@ -17,25 +17,25 @@ const UserProject = ({ project, color }) => {
     <Box shadow={3} h="194px" mx={4} my={4}>
       <Flex px={4} pt={6} pb={6} bg={color} justifyContent="center" h="76px">
         <Text bold color="#FFFFFF" fontSize="18px">
-          {name}
+          {name.length === 0 ? `N/A` : name}
         </Text>
         <Text color="#FFFFFF" fontSize="16px">
-          {description}
+          {description.length === 0 ? `N/A` : description}
         </Text>
       </Flex>
       <Box px={4} bg="#FFFFFF" h="118px">
         <Flex justifyContent="space-around">
           <Flex direction="row" my="9px">
             <Text bold>Manager: </Text>
-            <Text>{manager}</Text>
+            <Text> {manager.length === 0 ? `N/A` : manager}</Text>
           </Flex>
           <Flex direction="row" my="9px">
             <Text bold>Tech Leader: </Text>
-            <Text>{techLead}</Text>
+            <Text> {techLead.length === 0 ? `N/A` : techLead}</Text>
           </Flex>
           <Flex direction="row" my="9px">
             <Text bold>End Date: </Text>
-            <Text>{completeDate}</Text>
+            <Text> {endDate == 0 ? `N/A` : completeDate}</Text>
           </Flex>
         </Flex>
       </Box>
