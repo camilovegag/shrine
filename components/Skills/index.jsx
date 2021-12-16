@@ -33,7 +33,7 @@ const Skills = ({ skills, first_name }) => {
       {otherSkills.length === 0 ? null : (
         <Box mt={3}>
           <Text color="#333" fontFamily="Nunito-semi-bold" fontSize="18px" my={4} mx={4}>
-            {first_name} also knows about
+            {first_name.length === 0 ? "This user" : first_name} also knows about
           </Text>
           <Flex mx={4}>
             {otherSkills.map((otherSkill, idx) => (
